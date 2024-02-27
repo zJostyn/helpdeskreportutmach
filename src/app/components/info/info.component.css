@@ -1,0 +1,81 @@
+body {
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 115%;
+    background-size: 35%;
+}
+
+.titulo {
+    position: relative;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 125%;
+}
+
+.regresar {
+    position: absolute;
+    top: 80.5%;
+    left: 25px;
+    background-color: #000000;
+    border: 0px;
+    height: 40px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.regresar:hover {
+    background-color: rgb(131, 131, 131);
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.reporte {
+    width: 260px;
+    height: 400px;
+    left: 5%;
+    border-radius: 20px;
+    background-color: #47474762;
+    margin-right: 10px;
+}
+
+.tarjeta .imagen {
+    margin-top: 10px;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    left: 35px;
+    border-radius: 50px;
+}
+
+.nombre {
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.tarjeta .agithub {
+    position: relative;
+    text-decoration: none;
+}
+
+.tarjeta .github {
+    position: relative;
+    text-align: center;
+    color: rgb(0, 4, 255);
+}
+
+.tarjeta .frase {
+    position: relative;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+    font-size: 16px;
+    width: 230px;
+    left: 15px;
+}

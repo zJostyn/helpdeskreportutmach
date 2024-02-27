@@ -1,0 +1,73 @@
+<body>
+    <mat-toolbar>
+        <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+            <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+            <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+        </button>
+        <img src="assets/img/logo.png" alt="logo" class="logo">
+        <span>HELP DESK REPORT UTMACH</span>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav #sidenav="matSidenav" mode="side" opened>
+            <div *ngFor="let usuario of infoUsuario;">
+                <img class="avatar" src="{{usuario.avatar}}">
+                <h4 class="name">{{usuario.nombres}} {{usuario.apellidos}}</h4>
+                <h4 class="name" *ngIf="usuario.idtipousu == '2'">Encargado</h4>
+                <h4 class="name" *ngIf="usuario.idtipousu == '1'">Estudiante</h4>
+            </div>
+            <mat-divider></mat-divider>
+            <button mat-button class="menu-button " [routerLink]="[ 'inicio'] " routerLinkActive="active-link ">
+                <mat-icon>home</mat-icon>
+                <span>Inicio</span>
+            </button>
+            <button mat-button class="menu-button " [routerLink]="[ 'reportes'] ">
+                <mat-icon>report</mat-icon>
+                <span>Reportes</span>
+            </button>
+            <input type="checkbox " id="user " style="display: none; ">
+            <div *ngFor="let usuario of infoUsuario;">
+                <button mat-button class="menu-button " [routerLink]="[ 'soluciones'] " routerLinkActive="active " id="soluciones " *ngIf="usuario.idtipousu == '2'"> 
+                    <mat-icon>check</mat-icon>
+                    <span>Soluciones</span>
+                </button>
+            </div>
+            <mat-divider></mat-divider>
+            <button mat-button class="menu-button" (click)="mostrarModal()">
+                <mat-icon>logout</mat-icon>
+                <span>Desconectarse</span>
+            </button>
+
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="content ">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <div class="nuevocont" *ngIf="mostrarVentana">
+            <div class="ventana-emergente">
+                <span class="cerrar" (click)="cerrarModal()">Cerrar</span>
+                <p class="textodiv" >Antes de desconectarte, ayudanos con una retroalimentacion de que tal te parecio la pagina:</p>
+                <div class="puntuaciondiv">
+                    <button id="puntuacion1" class="puntuacion" (click)="puntuacionSeleccionada = 1">
+                        <img #estrella1 class="estrella" src="https://cdn-icons-png.flaticon.com/512/16/16666.png">
+                    </button>
+                    <button id="puntuacion2" class="puntuacion" (click)="puntuacionSeleccionada = 2">
+                        <img #estrella2 class="estrella" src="https://cdn-icons-png.flaticon.com/512/16/16666.png">
+                    </button>
+                    <button id="puntuacion3" class="puntuacion" (click)="puntuacionSeleccionada = 3">
+                        <img #estrella3 class="estrella" src="https://cdn-icons-png.flaticon.com/512/16/16666.png">
+                    </button>
+                    <button id="puntuacion4" class="puntuacion" (click)="puntuacionSeleccionada = 4">
+                        <img #estrella4 class="estrella" src="https://cdn-icons-png.flaticon.com/512/16/16666.png">
+                    </button>
+                    <button id="puntuacion5" class="puntuacion" (click)="puntuacionSeleccionada = 5">
+                        <img #estrella5 class="estrella" src="https://cdn-icons-png.flaticon.com/512/16/16666.png">
+                    </button>
+                </div>
+                <button class="btnguardar" (click)="guardarPuntuacion()">Guardar</button>
+            </div>
+    </div>
+</body>

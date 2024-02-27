@@ -1,0 +1,298 @@
+body {
+    background-image: url('src\assets\img\fondo.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+
+.register-box .avatar {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 50px);
+    border-radius: 30px;
+}
+
+.register-box {
+    width: 430px;
+    height: 560px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    background: rgba(4, 63, 119, 0.712);
+    border-radius: 30px;
+}
+
+.register-box h1 {
+    margin: 0;
+    padding: 0 -3px 5px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+
+.register-box label {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+}
+
+.register-box input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.register-box input::placeholder {
+    color: white;
+}
+
+.register-box a {
+    position: relative;
+    top: -10px;
+    color: wheat;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.register-box a:hover {
+    color: white;
+}
+
+.register-box input[type="text"],
+.register-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    font-size: 15px;
+    color: white;
+}
+
+.register-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #000000;
+    color: white;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.register-box input[type="submit"]:hover {
+    background: #777777;
+}
+
+.welcome-box {
+    height: 100px;
+    width: 500px;
+    top: 15%;
+    left: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.file {
+    color: white;
+}
+
+.welcome-box .bienvenida {
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    top: -40px;
+    left: calc(40% - 45px);
+}
+
+.welcome-box .bienvenido {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    font-style: oblique;
+    position: absolute;
+    color: white;
+    top: -30px;
+    left: 170px;
+}
+
+.welcome-box .titulo {
+    text-align: center;
+    position: relative;
+    top: 42%;
+    color: rgb(255, 252, 49);
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.welcome-box .mensaje {
+    text-align: justify;
+    position: relative;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.slide {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 15px;
+    height: 198px;
+    width: 340px;
+    left: 60px;
+}
+
+.videopromocion {
+    position: relative;
+    width: 330px;
+    top: 5px;
+    left: 5px;
+}
+
+#titulo {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+.mensaje-exito .img {
+    position: absolute;
+    top: -25px;
+    width: 60px;
+    height: 50px;
+}
+
+.mensaje-exito .txt {
+    position: absolute;
+    top: -8px;
+    left: 110px;
+}
+
+.mensaje-exito .txtdos {
+    position: absolute;
+    left: 27px;
+    top: 15px;
+}
+
+.mensaje-exito {
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 1000px;
+    height: 20px;
+    width: 300px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.mensaje-error {
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 1000px;
+    height: 20px;
+    width: 300px;
+    background-color: #af4c4c;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.mensaje-error .img {
+    position: absolute;
+    top: -25px;
+    width: 60px;
+    height: 55px;
+}
+
+.mensaje-error .txt {
+    position: absolute;
+    top: -8px;
+    left: 110px;
+}
+
+.mensaje-error .txtdos {
+    position: absolute;
+    left: 65px;
+    top: 15px;
+}
+
+.mensaje-error-correo {
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 1000px;
+    height: 20px;
+    width: 300px;
+    background-color: #af4c4c;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.mensaje-error-correo .img {
+    position: absolute;
+    top: -25px;
+    width: 60px;
+    height: 55px;
+}
+
+.mensaje-error-correo .txt {
+    position: absolute;
+    top: -8px;
+    left: 110px;
+}
+
+.mensaje-error-correo .txtdos {
+    position: absolute;
+    left: 65px;
+    top: 15px;
+}
+
+.datosvacios {
+    display: none;
+    color: orange;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    width: 350px;
+    font-size: 14px;
+}
+
+.datosvacios .nombresvacios {
+    position: absolute;
+    top: -38px;
+}
+
+.datosvacios .apellidosvacios {
+    position: absolute;
+    top: 33px;
+}
+
+.datosvacios .emailvacio {
+    position: absolute;
+    top: 105px;
+}
+
+.datosvacios .passvacia {
+    position: absolute;
+    top: 175px;
+}

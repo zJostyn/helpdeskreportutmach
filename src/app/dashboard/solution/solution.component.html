@@ -1,0 +1,20 @@
+<div id="miDiv" class="reports-main estudiante">
+    <div class="card" *ngFor="let reporte of reporteDetalle">
+        <h2 class="numeroreporte">Numero de Reporte: {{reporte.idreporte}}</h2>
+        <h4 class="fechareporte">Fecha del Reporte: {{reporte.fecha}}</h4>
+        <h4 class="estadoreporte">Estado del Reporte: {{reporte.estadoreporte}}</h4>
+        <hr>
+        <a class="estudiantereporte">Estudiante que lo reporto: {{reporte.usuario}}</a>
+        <p class="ldescripcion">Descripcion del Reporte:</p>
+        <p class="descripcion">{{reporte.descripcion}}</p>
+        <hr>
+        <label class="levidencia" for="evidencia">Evidencia del Reporte:</label> <br>
+        <img class="evidencia" [src]="reporte.evidencia" alt="Reporte">
+        <button class="imprimir" (click)="imprimirContenido()">Imprimir</button>
+        <button class="regresarhome" [routerLink]="['/principal/dashboard/home']">Regresar</button>
+    </div>
+</div>
+
+<div class="text-foot">
+    <p>UNIVERSIDAD TECNICA DE MACHALA - FACULTAD DE INGENIERIA CIVIL - TECNOLOGIAS DE LA INFORMACIÓN</p>
+</div>

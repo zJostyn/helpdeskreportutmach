@@ -1,0 +1,29 @@
+<body>
+    <div>
+        <h3 class="titulo">INTEGRANTES DEL GRUPO</h3>
+        <div class="tarjeta">
+            <div class="integrante" *ngFor="let info of informacion">
+                <mat-card class="reporte">
+                    <mat-card-header class="nombre">{{info.nombre}}</mat-card-header>
+                    <img class="imagen" mat-card-image [src]="info.img" style="overflow: hidden; object-fit: cover;">
+                    <a class="agithub" href="{{info.github}}">
+                        <mat-card-content class="github">{{info.github}}</mat-card-content>
+                    </a>
+                    <mat-card-footer class="frase">{{info.frase}}</mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+        <button [routerLink]="['/login']" class="regresar">Regresar a la pagina principal.</button>
+    </div>
+    <div>
+        <div style="width: 50%; display: flex;">
+            <img src="assets/img/Utmachlogo.png" alt="" style="height: 255px; margin-left: 40%;display: flex; margin-top: -7%;">
+            <img src="assets\img\Logo_FIC.png" alt="" style="height: 150px; margin-left: 5%; display: flex;">
+            <img src="assets\img\logoti.jpg" alt="" style="height: 140px; margin-left: 5%; display: flex; margin-top: 1%;">
+
+        </div>
+        <div style="width: 50%; display: flex;">
+
+        </div>
+    </div>
+</body>

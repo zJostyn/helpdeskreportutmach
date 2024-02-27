@@ -1,0 +1,239 @@
+.left {
+    background-image: url('src\assets\img\fondo.jpg');
+    background-size: cover;
+    float: left;
+    margin-right: 50%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.right {
+    width: 50vh;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin-left: 50%;
+}
+
+.login-box .avatar {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: -30px;
+    left: calc(50% - 50px);
+    border-radius: 30px;
+}
+
+.login-box {
+    width: 400px;
+    height: 450px;
+    top: 55%;
+    left: 25%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    background: rgba(4, 63, 119, 0.712);
+    border-radius: 30px;
+}
+
+.login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+}
+
+.login-box label {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+    color: white;
+}
+
+.login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input::placeholder {
+    color: white;
+}
+
+.login-box a {
+    color: rgb(255, 217, 45);
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.login-box a:hover {
+    color: white;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+}
+
+.login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #000000;
+    color: white;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.login-box input[type="submit"]:hover {
+    background: #7d7e7e;
+}
+
+.welcome-box {
+    height: 100px;
+    width: 500px;
+    top: 22%;
+    left: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.welcome-box .logo {
+    height: 90%;
+    top: -150px;
+    position: absolute;
+}
+
+.welcome-box .bienvenido {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    font-style: oblique;
+    position: absolute;
+    top: -30px;
+    left: 170px;
+}
+
+.welcome-box .titulo {
+    text-align: center;
+    position: relative;
+    top: 28%;
+    color: rgb(89, 59, 255);
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.welcome-box .mensaje {
+    text-align: justify;
+    position: relative;
+    top: -15px;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.slide {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    top: -10px;
+    margin-top: 15px;
+    height: 198px;
+    width: 340px;
+    left: 85px;
+}
+
+.videopromocion {
+    position: relative;
+    width: 330px;
+    height: 185px;
+    top: 5px;
+    left: 5px;
+}
+
+#titulo {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+.mensaje-exito .img {
+    position: absolute;
+    top: -25px;
+    width: 60px;
+    height: 50px;
+}
+
+.mensaje-exito .txt {
+    position: absolute;
+    top: -8px;
+    left: 110px;
+}
+
+.mensaje-exito .txtdos {
+    position: absolute;
+    left: 27px;
+    top: 15px;
+}
+
+.mensaje-exito {
+    display: none;
+    position: fixed;
+    top: 40px;
+    left: 480px;
+    height: 20px;
+    width: 300px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.mensaje-error {
+    display: none;
+    position: fixed;
+    top: 40px;
+    left: 480px;
+    height: 20px;
+    width: 300px;
+    background-color: #af4c4c;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.mensaje-error .img {
+    position: absolute;
+    top: -25px;
+    width: 60px;
+    height: 55px;
+}
+
+.mensaje-error .txt {
+    position: absolute;
+    top: -8px;
+    left: 110px;
+}
+
+.mensaje-error .txtdos {
+    position: absolute;
+    left: 65px;
+    top: 15px;
+}

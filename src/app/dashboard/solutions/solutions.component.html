@@ -1,0 +1,76 @@
+<div id="miDiv" class="reportesgrid">
+    <h3 class="titulo-main">REPORTES TOTALES RECIBIDOS</h3>
+
+    <div class="filtrado">
+        <a class="lfiltrar">Filtrar por Laboratorios:</a>
+        <select id="ubicacion" class="ubicacion s">
+            <option selected disables value = "seleccione"> Seleccione una opción</option>
+        </select>
+        <button class="imprimir" (click)="imprimirContenido()">Imprimir</button>
+    </div>
+
+    <div class="reports-main">
+        <div class="card" *ngFor="let reporte of reportesUsuario">
+            <mat-card class="reporte">
+                <mat-card-header class="titulo">
+                    Reporte de dispositivo #{{reporte.idreporte}}
+                </mat-card-header>
+                <a class="estado">Estado del Reporte: 
+                    <small class="abierto" *ngIf="reporte.estadoreporte == 'Abierto'">{{reporte.estadoreporte}}</small>
+                    <small class="cerrado" *ngIf="reporte.estadoreporte == 'Cerrado'">{{reporte.estadoreporte}}</small>
+                </a> <a class="fecha">Fecha del Reporte: {{reporte.fecha}}</a>
+                <img mat-card-image [src]=reporte.evidencia>
+                <mat-card-actions>
+                    <button [routerLink]="['/principal/dashboard/solucion/' + reporte.idreporte]" class="detalles">Mas detalles</button>
+                    <button id="darsolu" (click)="darSolucion(reporte.idreporte, reporte.usuario, 'seleccione', infoUsuario[0].nombres + ' ' + infoUsuario[0].apellidos, this.obtenerFecha(), '')" class="darsolu">Dar Solución</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="darsolucion">
+    <h3 class="titulo">REPORTE DE DAÑOS</h3>
+    <form [formGroup]="solutionForm" (ngSubmit)="solucionar(solutionForm.value)">
+        <label class="lreporte">Reporte Nº
+            <input formControlName="idreporte" type="text" class="reporte">
+        </label>
+        <br>
+        <label for="reporteestudiante" class="lreporteestudiante">Estudiante:</label>
+        <input formControlName="estudiante" type="text" class="reporteestudiante" id="estudiante">
+        <br>
+        <label for="fecha" class="lfecha">Fecha:</label>
+        <input formControlName="fecha" type="date" id="fecha" class="fecha">
+        <br>
+        <label for="encargado" class="lencargado">Encargado:</label>
+        <input formControlName="encargado" type="text" id="encargado" class="encargado">
+        <br>
+        <label for="estadosolucion" class="lestadosolucion">Estado:</label>
+        <select formControlName="estadosolucion" name="estadosolucion" id="estadosolucion" class="estadosolucion">
+            <option value="seleccione" selected>Seleccione una opcion</option>
+            <option value="1">Solucionado</option>
+            <option value="2">Sin Solucion</option>
+        </select>
+        <br>
+        <label for="solucion" class="lsolucion">Solucion:</label>
+        <br>
+        <textarea formControlName="descripcion" name="solucion" id="solucion" class="solucion" cols="43" rows="5" style="resize: none;"></textarea>
+        <input class="guardar" type="submit" value="Guardar" style="cursor:pointer; margin-top: 15px;">
+    </form>
+</div>
+
+<div id="mensajeExito" class="mensaje-exito">
+    <img class="img" src="assets/img/registro.png" alt="">
+    <div>
+        <p class="txt">¡Solución exitosa!</p>
+        <p class="txtdos">El detalle de la solucion se envio al usuario.</p>
+    </div>
+</div>
+
+<div id="mensajeError" class="mensaje-error">
+    <img class="img" src="assets/img/errorregistro.png" alt="">
+    <div>
+        <p class="txt">¡Hubo un Problema!</p>
+        <p class="txtdos">No se pudo efectuar la solución.</p>
+    </div>
+</div>

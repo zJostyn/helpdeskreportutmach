@@ -1,0 +1,57 @@
+<body>
+    <div class="register-box">
+        <img class="avatar" src="https://cdn-icons-png.flaticon.com/128/3237/3237472.png">
+        <h1>Registro de usuario</h1>
+        <form [formGroup]="registerForm" (ngSubmit)="registrar(registerForm.value)">
+            <label for="nom">Nombres:</label>
+            <input id="nombres" formControlName="nombres" type="text" placeholder="Ingrese sus nombres ">
+            <label for="ape">Apellidos:</label>
+            <input id="apellidos" formControlName="apellidos" type="text" placeholder="Ingrese sus apellidos ">
+
+            <label for="email">Correo Electronico:</label>
+            <input id="email" formControlName="email" type="text" placeholder="Ingrese el correo ">
+
+            <label for="pass">Contraseña:</label>
+            <input id="pass" formControlName="pass" type="password" placeholder="Ingrese la contraseña ">
+
+            <label for="avatar">Avatar:</label>
+            <input class="file" type="file" name="file" accept="image/*" (change)="onFileSelected($event)">
+
+            <input type="submit" value="Register" style="cursor:pointer">
+            <a [routerLink]=" '/login' ">¿Ya tienes una cuenta?</a>
+            <br>
+            <a [routerLink]=" '/info' ">¿Quienes Somos? / Integrantes</a>
+        </form>
+    </div>
+    <div id="mensajeExito" class="mensaje-exito">
+        <img class="img" src="assets/img/registro.png" alt="">
+        <div>
+            <p class="txt">¡Registro exitoso!</p>
+            <p class="txtdos">Espero que disfrutes de nuestra pagina.</p>
+        </div>
+    </div>
+
+    <div id="mensajeError" class="mensaje-error">
+        <img class="img" src="assets/img/errorregistro.png" alt="">
+        <div>
+            <p class="txt">¡Hubo un Problema!</p>
+            <p class="txtdos">No se pudo efectuar el registro.</p>
+        </div>
+    </div>
+
+    <div id="datosvacios" class="datosvacios">
+        <p id="nombresvacios" class="nombresvacios">Porfavor ingrese un nombre!</p>
+        <p id="apellidosvacios" class="apellidosvacios">Porfavor ingrese un apellido!</p>
+        <p id="emailvacio" class="emailvacio">Porfavor ingrese un correo valido!</p>
+        <p id="passvacia" class="passvacia">Porfavor ingrese una contraseña valida!</p>
+    </div>
+
+
+    <div id="mensajeErrorCorreo" class="mensaje-error-correo">
+        <img class="img" src="assets/img/errorregistro.png" alt="">
+        <div>
+            <p class="txt">¡Hubo un Problema!</p>
+            <p class="txtdos">Este correo ya esta registrado!.</p>
+        </div>
+    </div>
+</body>

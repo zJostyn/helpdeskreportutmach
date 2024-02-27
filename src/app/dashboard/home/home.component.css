@@ -1,0 +1,221 @@
+.welcome {
+    height: 140px;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    background: #19457C;
+    border-radius: 10px;
+}
+
+.welcome .user {
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: -8px;
+}
+
+.welcome .email {
+    color: wheat;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+}
+
+.welcome .calendario {
+    position: relative;
+    left: 1180px;
+}
+
+.welcome .calendario .logo {
+    position: relative;
+    width: 80px;
+    height: 65px;
+    top: 20px;
+}
+
+.welcome .calendario .mesaño {
+    position: relative;
+    top: -60px;
+    left: -9px;
+    color: white;
+    font: bold 11px verdana, arial, sans-serif;
+    margin: 20px 0 0 17px;
+}
+
+.welcome .calendario .dia {
+    position: relative;
+    top: -64px;
+    left: 0px;
+    font: bold 36px verdana, arial, sans-serif;
+    margin: 0 0 0 15px;
+}
+
+.welcome .calendario .hora {
+    position: relative;
+    top: -62px;
+    left: -8px;
+    font: bold 20px verdana, arial, sans-serif;
+    margin: 0 0 0 15px;
+    color: white;
+}
+
+.reports {
+    width: 185px;
+    height: 50px;
+    padding: 0;
+    position: absolute;
+    top: 90px;
+    left: 50px;
+    background-color: #0B5EA7;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.856);
+}
+
+.reports .count {
+    position: absolute;
+    top: -35px;
+    left: 8px;
+    font-size: 2rem;
+}
+
+.reports .text {
+    position: absolute;
+    top: -5px;
+    left: 18%;
+}
+
+.closed {
+    width: 185px;
+    height: 50px;
+    padding: 0;
+    position: absolute;
+    top: 90px;
+    left: 24%;
+    background-color: #0B5EA7;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.856);
+}
+
+.closed .count {
+    position: absolute;
+    top: -35px;
+    left: 8px;
+    font-size: 2rem;
+}
+
+.closed .text {
+    position: absolute;
+    top: -5px;
+    left: 18%;
+}
+
+.NoReports {
+    position: absolute;
+    font-size: 20px;
+    color: black;
+    top: 250px;
+    left: 430px;
+}
+
+.text-foot {
+    position: absolute;
+    color: black;
+    top: 500px;
+    left: 150px;
+    font: bold 13px verdana, arial, sans-serif;
+}
+
+.reports-main {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+}
+
+.encargado .card .reporte img {
+    width: 240px;
+    left: 50px;
+    align-content: center;
+    height: 120px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.estudiante .card .reporte img {
+    width: 270px;
+    left: 40px;
+    align-content: center;
+    height: 150px;
+    margin-top: 5px;
+}
+
+.card {
+    position: relative;
+    top: 140px;
+    left: 20px;
+    width: 350px;
+    height: 300px;
+    margin-right: 20px;
+}
+
+.card .reporte {
+    border-radius: 25px;
+    height: 285px;
+    border-color: #0B5EA7;
+    border-width: 2px;
+}
+
+.card .reporte .titulo {
+    position: relative;
+    left: 60px;
+    font-weight: bold;
+}
+
+.card .reporte .idreporte {
+    position: relative;
+    margin-top: 4px;
+    font-style: italic;
+    left: 40px;
+}
+
+.card .reporte .estado {
+    position: relative;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-style: italic;
+    left: 40px;
+}
+
+.card .reporte .abierto {
+    font-size: 16px;
+    color: green;
+}
+
+.card .reporte .cerrado {
+    font-size: 16px;
+    color: red;
+}
+
+.card .reporte .fecha {
+    position: relative;
+    margin-bottom: 4px;
+    font-style: italic;
+    left: 40px;
+}
+
+.detalles {
+    position: absolute;
+    background-color: #0B5EA7;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    top: 245px;
+    left: 232px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.detalles:hover {
+    background: black;
+}

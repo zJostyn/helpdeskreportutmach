@@ -1,0 +1,54 @@
+<body>
+    <div class="left">
+        <div class="login-box">
+            <img class="avatar" src="https://cdn-icons-png.flaticon.com/128/3237/3237472.png">
+            <h1>Inicio de sesión</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="ingresar(loginForm.value)">
+                <label for="email ">Correo Electronico:</label>
+                <input formControlName="email" type="text" placeholder="Ingrese el correo ">
+
+                <label for="pass">Contraseña:</label>
+                <input formControlName="pass" type="password" placeholder="Ingrese la contraseña ">
+
+                <input type="submit" value="Log In" style="cursor:pointer">
+
+                <a [routerLink]=" '/register' ">¿Necesitas una cuenta?</a>
+                <br>
+                <a [routerLink]=" '/info' ">¿Quienes Somos? / Integrantes</a>
+
+            </form>
+        </div>
+    </div>
+    <div class="right">
+        <div class="welcome-box">
+            <img class="logo" src="assets/img/Utmachlogo.png" style="margin-top: 5%; margin-left: 15%; height: 200%;">
+            <h4 class="bienvenido">Bienvenidos</h4>
+            <h2 class="titulo">HELP DESK REPORT UTMACH</h2>
+            <br>
+            <p class="mensaje">Es un sistema rápido, sencillo y escalable para el seguimiento de errores que lo ayuda a corregirlos fácilmente y a entregar productos excelentes a tiempo. Ya sea que esté desarrollando software, gestionando proyectos o supervisando el rendimiento
+                de su equipo, esta herramienta ha sido diseñada para simplificar y mejorar su flujo de trabajo.</p>
+            <p class="mensaje">Este sistema es una herramienta esencial para cualquier equipo de desarrollo o gestión de proyectos que busque mantener un alto nivel de calidad en sus entregas. Su enfoque en la simplicidad, velocidad y escalabilidad lo convierte en una opción
+                confiable y eficiente para el seguimiento de errores y la entrega puntual de productos excelentes.</p>
+            <div class="slide">
+                    <iframe src="https://www.youtube.com/embed/vmSpjJW0MnY?si=sKC9vMLCHoPp3tMP?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="videopromocion"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="mensajeExito" class="mensaje-exito">
+        <img class="img" src="assets/img/registro.png" alt="">
+        <div>
+            <p class="txt">¡Inicio de sesión exitoso!</p>
+            <p class="txtdos">Espero que disfrutes de nuestra pagina.</p>
+        </div>
+    </div>
+
+    <div id="mensajeError" class="mensaje-error">
+        <img class="img" src="assets/img/errorregistro.png" alt="">
+        <div>
+            <p class="txt">¡Hubo un Problema!</p>
+            <p class="txtdos">Existen campos vacios en sus datos.</p>
+        </div>
+    </div>
+</body>

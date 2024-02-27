@@ -1,0 +1,84 @@
+<div class="welcome" *ngFor="let usuario of infoUsuario;">
+    <h3 class="user">Bienvenido {{usuario.nombres}} {{usuario.apellidos}}!</h3>
+    <h4 class="email">{{usuario.email}}</h4>
+    <div class="calendario">
+        <img class="logo" src="assets/img/calendario.png" alt="">
+        <p class="mesaño">
+            {{obtenerFecha()[0]}} </p>
+        <p class="dia">
+            {{obtenerFecha()[1]}} </p>
+        <p class="hora">
+            {{obtenerFecha()[2]}}
+        </p>
+    </div>
+</div>
+
+<div class="reports">
+    <h4 class="count estudiante" *ngIf="infoUsuario[0].idtipousu == '1'">{{cantidadReportesA}}</h4>
+    <h4 class="text estudiante" *ngIf="infoUsuario[0].idtipousu == '1'">Casos Abiertos</h4>
+
+    <h4 class="count encargado" *ngIf="infoUsuario[0].idtipousu == '2'">{{cantidadSolucionesL}}</h4>
+    <h4 class="text encargado" *ngIf="infoUsuario[0].idtipousu == '2'">Casos Solucionados</h4>
+</div>
+
+<div class="closed">
+    <h4 class="count estudiante" *ngIf="infoUsuario[0].idtipousu == '1'">{{cantidadReportesC}}</h4>
+    <h4 class="text estudiante" *ngIf="infoUsuario[0].idtipousu == '1'">Casos Cerrados</h4>
+
+    <h4 class="count encargado" *ngIf="infoUsuario[0].idtipousu == '2'">{{cantidadSolucionesNL}}</h4>
+    <h4 class="text encargado" *ngIf="infoUsuario[0].idtipousu == '2'">Casos Sin Solucion</h4>
+</div>
+
+<div class="NoReports Estudiante" *ngIf="infoUsuario[0].idtipousu == '1'">
+    <div *ngIf="reportesUsuario.length == 0">
+        <h4>No tiene reportes publicados.</h4>
+    </div>
+</div>
+
+<div class="NoReports Encargado" *ngIf="infoUsuario[0].idtipousu == '2'">
+    <div *ngIf="solucionesEncargado.length == 0">
+        <h4>No ha solucionado ningun reporte.</h4>
+    </div>
+</div>
+
+<div class="reports-main estudiante" *ngIf="infoUsuario[0].idtipousu == '1'">
+    <div class="card" *ngFor="let reporte of reportesUsuario">
+        <mat-card class="reporte">
+            <mat-card-header class="titulo">
+                Reporte de dispositivo #{{reporte.idreporte}}
+            </mat-card-header>
+            <a class="estado">Estado del Reporte: 
+                <small class="abierto" *ngIf="reporte.estadoreporte == 'Abierto'">{{reporte.estadoreporte}}</small>
+                <small class="cerrado" *ngIf="reporte.estadoreporte == 'Cerrado'">{{reporte.estadoreporte}}</small>
+            </a> <a class="fecha">Fecha del Reporte: {{reporte.fecha}}</a>
+            <img mat-card-image [src]=reporte.evidencia>
+            <mat-card-actions>
+                <button [routerLink]="['/principal/dashboard/reporte/' + reporte.idreporte]" class="detalles">Mas detalles</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<div class="reports-main encargado" *ngIf="infoUsuario[0].idtipousu == '2'">
+    <div class="card" *ngFor="let solucion of solucionesEncargado">
+        <mat-card class="reporte">
+            <mat-card-header class="titulo">
+                Solucion de reporte #{{solucion.idsolucion}}
+            </mat-card-header>
+            <a class="idreporte">Identificador de Reporte: {{solucion.idreporte}}</a>
+            <a class="estado">Estado de la Solucion: 
+                <small class="abierto" *ngIf="solucion.estadosolucion == 'Solucionado'">{{solucion.estadosolucion}}</small>
+                <small class="cerrado" *ngIf="solucion.estadosolucion == 'Sin Solucion'">{{solucion.estadosolucion}}</small>
+            </a> <a class="fecha">Fecha de la Solucion: {{solucion.fecha}}</a>
+            <img mat-card-image [src]=solucion.evidencia>
+            <mat-card-actions>
+                <button [routerLink]="['/principal/dashboard/reporte/' + solucion.idreporte]" class="detalles">Mas detalles</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+
+<div class="text-foot">
+    <p>UNIVERSIDAD TECNICA DE MACHALA - FACULTAD DE INGENIERIA CIVIL - TECNOLOGIAS DE LA INFORMACIÓN</p>
+</div>

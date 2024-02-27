@@ -1,0 +1,344 @@
+.reportesgrid {
+    width: 680px;
+}
+
+.reportesgrid .titulo-main {
+    position: relative;
+    color: black;
+    left: 185px;
+    top: -10px;
+}
+
+.reports-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 310px;
+    height: 200px;
+    margin-right: 20px;
+    top: -116px;
+    margin-top: 110px;
+}
+
+.card .reporte {
+    border-radius: 25px;
+    height: 285px;
+    border-color: #0B5EA7;
+    border-width: 2px;
+}
+
+.card .reporte .titulo {
+    position: relative;
+    left: 45px;
+    font-weight: bold;
+}
+
+.card .reporte .estado {
+    position: relative;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-style: italic;
+    left: 40px;
+}
+
+.card .reporte .abierto {
+    font-size: 16px;
+    color: green;
+}
+
+.card .reporte .cerrado {
+    font-size: 16px;
+    color: red;
+}
+
+.card .reporte .fecha {
+    position: relative;
+    margin-bottom: 4px;
+    font-style: italic;
+    left: 40px;
+}
+
+.card .reporte img {
+    width: 270px;
+    left: 20px;
+    align-content: center;
+    height: 150px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.detalles {
+    position: absolute;
+    background-color: #0B5EA7;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    top: 245px;
+    left: 191px;
+    cursor: pointer;
+}
+
+.detalles:hover {
+    background: black;
+}
+
+.darsolu {
+    position: absolute;
+    background-color: #0B5EA7;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    top: 245px;
+    left: 18px;
+    cursor: pointer;
+}
+
+.darsolu:hover {
+    background: black;
+}
+
+.darsolucion {
+    position: absolute;
+    left: 690px;
+    top: 60px;
+    width: 440px;
+    height: 470px;
+    background-color: #226daf;
+    border-radius: 10px;
+}
+
+.darsolucion .titulo {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.darsolucion .lreporte {
+    position: relative;
+    left: 15px;
+    color: white;
+    font-size: 1.3rem;
+    top: -11px;
+    pointer-events: none;
+}
+
+.darsolucion .reporte {
+    position: relative;
+    border: 0px;
+    left: 5px;
+    top: 2px;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    width: 20px;
+    color: white;
+    background: transparent;
+}
+
+.darsolucion .lreporteestudiante {
+    position: relative;
+    left: 15px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.darsolucion .reporteestudiante {
+    position: relative;
+    border: 0px;
+    left: 24px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: 280px;
+    pointer-events: none;
+}
+
+.darsolucion .lfecha {
+    position: relative;
+    left: 15px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.darsolucion .fecha {
+    position: relative;
+    border: 0px;
+    left: 67px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: 282px;
+    height: 22px;
+    pointer-events: none;
+}
+
+.darsolucion .lencargado {
+    position: relative;
+    left: 15px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.darsolucion .encargado {
+    position: relative;
+    border: 0px;
+    left: 25px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: 278px;
+    pointer-events: none;
+}
+
+.darsolucion .lestadosolucion {
+    position: relative;
+    left: 15px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.darsolucion .estadosolucion {
+    position: relative;
+    border: 0px;
+    left: 60px;
+    width: 282px;
+    height: 23px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.darsolucion .lsolucion {
+    position: relative;
+    left: 15px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.darsolucion .solucion {
+    position: relative;
+    border: 0px;
+    left: 15px;
+    font-size: 1rem;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.darsolucion .guardar {
+    position: absolute;
+    background-color: #06467e;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    top: 370px;
+    left: 165px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.darsolucion .guardar:hover {
+    background-color: black;
+}
+
+.mensaje-exito .img {
+    position: absolute;
+    top: -25px;
+    width: 60px;
+    height: 50px;
+}
+
+.mensaje-exito .txt {
+    position: absolute;
+    top: -8px;
+    left: 110px;
+}
+
+.mensaje-exito .txtdos {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.mensaje-exito {
+    display: none;
+    position: fixed;
+    top: 35px;
+    left: 950px;
+    height: 20px;
+    width: 300px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.mensaje-error {
+    display: none;
+    position: fixed;
+    top: 35px;
+    left: 950px;
+    height: 20px;
+    width: 300px;
+    background-color: #af4c4c;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.mensaje-error .img {
+    position: absolute;
+    top: -25px;
+    width: 60px;
+    height: 55px;
+}
+
+.mensaje-error .txt {
+    position: absolute;
+    top: -8px;
+    left: 110px;
+}
+
+.mensaje-error .txtdos {
+    position: absolute;
+    left: 65px;
+    top: 15px;
+}
+
+.imprimir {
+    position: relative;
+    background: #0B5EA7;
+    color: white;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    height: auto;
+    top: -10px;
+    left: 20px;
+}
+
+.lfiltrar {
+    position: absolute;
+    top: 50px;
+    left: 37px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.ubicacion {
+    position: relative;
+    top: -12px;
+    left: 5px;
+}

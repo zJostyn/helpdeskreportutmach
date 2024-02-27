@@ -1,0 +1,142 @@
+<div class="principal">
+    <h2 class="titulo">Reportes de daños en equipos de computo</h2>
+    <h3 class="subtitulo estudiante" *ngIf="infoUsuario[0].idtipousu == '1'">Mis Reportes</h3>
+    <h3 class="subtituloencargado" *ngIf="infoUsuario[0].idtipousu == '2'">Mis Reportes Solucionados</h3>
+</div>
+
+<div class="reports-main estudiante" *ngIf="infoUsuario[0].idtipousu == '1'">
+    <div class="card" *ngFor="let reporte of reportesUsuario">
+        <mat-card class="reporte">
+            <mat-card-header class="titulo">
+                Reporte de dispositivo #{{reporte.idreporte}}
+            </mat-card-header>
+            <a class="estado">Estado del Reporte: 
+                <small class="abierto" *ngIf="reporte.estadoreporte == 'Abierto'">{{reporte.estadoreporte}}</small>
+                <small class="cerrado" *ngIf="reporte.estadoreporte == 'Cerrado'">{{reporte.estadoreporte}}</small>
+            </a> <a class="fecha">Fecha del Reporte: {{reporte.fecha}}</a>
+            <img mat-card-image [src]=reporte.evidencia>
+            <mat-card-actions>
+                <button [routerLink]="['/principal/dashboard/reporte/' + reporte.idreporte]" class="detalles">Mas detalles</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<div class="reports-main encargado" *ngIf="infoUsuario[0].idtipousu == '2'">
+    <div class="card" *ngFor="let solucion of solucionesEncargado">
+        <mat-card class="reporte">
+            <mat-card-header class="titulo">
+                Solucion de reporte #{{solucion.idsolucion}}
+            </mat-card-header>
+            <a class="idreporte">Identificador de Reporte: {{solucion.idreporte}}</a>
+            <a class="estado">Estado de la Solucion: 
+                <small class="abierto" *ngIf="solucion.estadosolucion == 'Solucionado'">{{solucion.estadosolucion}}</small>
+                <small class="cerrado" *ngIf="solucion.estadosolucion == 'Sin Solucion'">{{solucion.estadosolucion}}</small>
+            </a> <a class="fecha">Fecha de la Solucion: {{solucion.fecha}}</a>
+            <img mat-card-image [src]=solucion.evidencia>
+            <mat-card-actions>
+                <button [routerLink]="['/principal/dashboard/reporte/' + solucion.idreporte]" class="detalles">Mas detalles</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<body>
+    <input type="checkbox" id="btn-mostrar" class="check-mostrar">
+    <label for="btn-mostrar" class="btn mostrar" *ngIf="infoUsuario[0].idtipousu == '1'" (click)="mostrarDetalles()" (click)="mostrarTipos()" (click)="mostrarUbicaciones()" (click)="mostrarPopUp()">Nuevo Reporte</label>
+    <div class="nuevocont">
+        <div class="contenido">
+            <header>
+                <h2>Daños en Equipo de Computo</h2>
+                <label for="btn-mostrar" class="cerrar" (click)="recargarPagina()">X</label>
+            </header>
+            <form [formGroup]="nuevoReporteForm">
+                <h4 class="reporte-num">Reporte Nº {{obtenerNumero()}}</h4>
+                <h4 class="date" id="date">Fecha: {{obtenerFecha()}}</h4>
+                <input type="checkbox" id="btn-sig" class="check-sig">
+                <div class="contenido1">
+                    <label class="problema-equipo">Seleccione el equipo que presenta un problema:</label>
+                    <div class="dispositivo">
+                        <label for="ubicacion" class="ubicacion">Ubicacion del equipo:</label>
+                        <select formControlName="idubicacion" id="ubicacion" class="ubicacion s"></select>
+                        <br>
+                        <label for="monitor">
+                            <img src="assets/img/Monitor Global.jpeg" alt="monitor" class="img monitor" id="imgMonitor" value="1">
+                        </label>
+                        <label for="teclado">
+                            <img src="assets/img/Teclado Global.jpeg" alt="teclado" class="img teclado" id="imgTeclado" value="2">
+                        </label>
+                        <label for="mouse">
+                            <img src="assets/img/Mouse Global.jpeg" alt="mouse" class="img mouse" id="imgMouse" value="3">
+                        </label>
+                        <label for="cpu">
+                            <img src="assets/img/CPU Global.jpeg" alt="cpu" class="img cpu" id="imgCPU" value="4">
+                        </label>
+                    </div>
+                    <div class="idequipo">
+                        <input formControlName="idequipo" type="radio" name="idequipo" class="monitor" value="1" id="radioMonitor">
+                        <input formControlName="idequipo" type="radio" name="idequipo" class="teclado" value="2" id="radioTeclado">
+                        <input formControlName="idequipo" type="radio" name="idequipo" class="mouse" value="3" id="radioMouse">
+                        <input formControlName="idequipo" type="radio" name="idequipo" class="cpu" value="4" id="radioCPU">
+                    </div>
+                    <br>
+                    <div class="daños ">
+                        <label for="tipodaño" class="tipodaño">Tipo de daño del equipo:</label>
+                        <select id="tipodaño" class="tipodaño s"></select>
+                        <button class="informacion" id="informacion">Información</button>
+                        <a class="tiempotipo" id="tiempotipo"></a>
+                        <div class="popup" id="popup">
+                            <div class="popup-content">
+                                <span class="close" id="closeBtn">&times;</span>
+                                <span class="prev" id="prevBtn">&#10094;</span>
+                                <div class="carousel">
+                                    <img src="assets/img/Daño F.png" alt="">
+                                    <img src="assets/img/Daño por Desgaste y Envejecimiento.png" alt="">
+                                    <img src="assets/img/Daño por Hardware.png" alt="">
+                                    <img src="assets/img/Daño por Problemas de Red.png" alt="">
+                                    <img src="assets/img/Daño por Uso Incorrecto.png" alt="">
+                                    <img src="assets/img/Daño Por Software.png" alt="">
+                                </div>
+                                <span class="next" id="nextBtn">&#10095;</span>
+                            </div>
+                        </div>
+                        <br>
+                        <label for="subtipodaño" class="subtipodaño">Mas detalles del daño:</label>
+                        <select formControlName="iddetalledanio" id="subtipodaño" class="subtipodaño s">
+                        </select>
+                    </div>
+                </div>
+                <div class="contenido2">
+                    <label for="descripcion">Descripcion del daño:</label>
+                    <br>
+                    <textarea class="descripcion" formControlName="descripcion" name="" id="" cols="90" rows="3" style="resize: none;"></textarea>
+                    <br>
+                    <label for="seleccionArchivos">Anexar Evidencia:</label>
+                    <input name="file" type="file" id="seleccionArchivos" accept="video/*,image/*" style="margin-left: 10px;" (change)="onFileSelected($event)">
+                    <br>
+                    <img id="imagenPrevisualizacion" class="mostrarImagen">
+                    <video id="videoPrevisualizacion" class="mostrarVideo"></video>
+
+                </div>
+                <label *ngIf="btnAnteriorVisible" for="btn-mostrar" class="btn guardar" (click)="enviarNuevoReporte(nuevoReporteForm.value)">Guardar Reporte</label>
+                <label for="btn-sig" class="btn siguiente" (click)="mostrarotroboton('btnsiguiente')">Siguiente Pag.</label>
+                <label *ngIf="btnAnteriorVisible" for="btn-sig" class="btn anterior" #btnanterior (click)="mostrarotroboton('btnanterior')">Anterior Pag.</label>
+            </form>
+        </div>
+    </div>
+
+    <div id="mensajeExito" class="mensaje-exito">
+        <img class="img" src="assets/img/registro.png" alt="">
+        <div>
+            <p class="txt">¡Reporte exitoso!</p>
+            <p class="txtdos">El reporte se envio correctamente!.</p>
+        </div>
+    </div>
+
+    <div id="mensajeError" class="mensaje-error">
+        <img class="img" src="assets/img/errorregistro.png" alt="">
+        <div>
+            <p class="txt">¡Hubo un Problema!</p>
+            <p class="txtdos">No se pudo efectuar el reporte.</p>
+        </div>
+    </div>
